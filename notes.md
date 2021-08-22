@@ -224,7 +224,7 @@ for ite in range(100):
 
 解决这个问题的方法之一，就是先用极值把一元三次方程分成三段，比如[0,x1]以及[x1,x2]以及[x2,1]三段。然后分别用牛顿迭代法求。一元三次方程的极值处就它斜率为零的地方。
 
-![image-20210822143058717](E:\tutorials\collisionDetection\images\image-20210822143058717.png)
+![image-20210822143058717](https://github.com/clatterrr/ContinousCollisionDetection/blob/master/images/image-20210822143058717.png?raw=true)
 
 虽然arcsim库用了牛顿迭代法，不过直接用牛顿迭代挺慢的，二分法也慢，但把它们结合起来或许会更快一些？safeccd库就是这样做的。selfccd库也用了二分法加牛顿迭代，不过按照那个库的写法，叫牛顿递归更好一些...这两个库的介绍在本篇最后。
 
