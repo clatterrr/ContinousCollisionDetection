@@ -1,12 +1,7 @@
 import numpy as np
 
-
-
-# 参考[1] Defending Continuous Collision Detection against Errors
-# [2] Fast and Exact Continuous Collision Detection with Bernstein Sign Classification 
-# [3] arcsim 库 http://graphics.berkeley.edu/resources/ARCSim/
-
-# 这份代码实现了Vertex - Face Continuous Collision Detection
+# 连续碰撞检测 点-面
+# 参考：arcsim库 http://graphics.berkeley.edu/resources/ARCSim/
 
 def cross(vec0,vec1):
     res = np.zeros((3))
@@ -74,11 +69,6 @@ def solve_cubic(a,b,c,d,x):
             x[i+1] = newtowns_method(a, b, c, d, xc[1], 1)
             i += 1
         return i
-
-# 所以先看看在区间[0,1]内，右式分母，也就是函数的导数有没有解
-# 如果有零个解，那么证明原函数是在[0,1]内是单调的，就得上真的牛顿迭代法
-# 如果有一个解，那么可以证明原三次函数可以化为二次函数，为什么？不知道
-# 如果有两个解，那么就要把原三次函数的三个解尽可能找出来
 
 # 解法来自 http://en.wikipedia.org/wiki/Quadratic_formula#Floating_point_implementation
 def solve_quadratic(a,b,c,x):
